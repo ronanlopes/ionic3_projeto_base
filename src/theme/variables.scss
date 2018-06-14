@@ -46,6 +46,17 @@ $colors: (
 
 
 
+$background-color: #F3F3F4;
+$toolbar-background: #293846;
+$menu-ios-background: map-get($colors, secondary);
+$menu-md-background: map-get($colors, secondary);
+
+$list-border-color: #fff;
+$list-ios-border-color: $list-border-color !default;
+$list-md-border-color: $list-border-color !default;
+$list-wp-border-color: $list-border-color !default;
+
+
 
 // App iOS Variables
 // --------------------------------------------------

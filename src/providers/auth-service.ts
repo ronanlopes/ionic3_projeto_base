@@ -26,16 +26,10 @@ export class AuthService {
 	    return this.http.post(this.url_base+'/login',
 	    	{email: credentials.email, password: credentials.password}
 	    )
-      .map((response: Response) => {
-        console.log("resposta");
-        console.log(response);
-        return response.json();
-      }).catch((error:any) => {
-        console.log("erro");
-        console.log(error);
-        return Observable.throw(error.json().errors ||
-        'Ops, algo deu errado ao processar sua requisição. Verifique sua conexão com a internet ou tente novamente mais tarde!')
-      }).do( (user) => {
+      .map((response: Response) => response.json())
+      .catch((error:any) => Observable.throw(error.json().errors ||
+        'Ops, algo deu errado ao processar sua requisição. Verifique sua conexão com a internet ou tente novamente mais tarde!'))
+      .do( (user) => {
 
       	this.setCurrentUser({
           name: user.name,
