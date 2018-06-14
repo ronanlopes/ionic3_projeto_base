@@ -1,0 +1,48 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+  <ion-card>
+    <ion-card-content>
+
+      <img class="profile-img-card" src="assets/images/login_avatar.png"/>
+      <form #f="ngForm" (ngSubmit)="login(f)">
+        <ion-list>
+          <ion-item>
+            <ion-label floating>E-mail</ion-label>
+            <ion-input
+              type="email"
+              ngModel
+              name="email"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Senha</ion-label>
+            <ion-input
+              type="password"
+              ngModel
+              name="password"
+              required></ion-input>
+          </ion-item>
+        </ion-list>
+        <br>
+        <button ion-button block type="submit" [disabled]="!f.valid">Entrar</button>
+        <br>
+        <h2 class="text-center"><a (click)="forgotPassword()">Esqueceu sua senha? </a></h2>
+
+      </form>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
